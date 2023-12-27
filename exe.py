@@ -59,7 +59,7 @@ if __name__ == '__main__':
             file_path = save_uploaded_file(uploaded_file, folder="uploads")
             st.info(f"File saved to: {file_path}")
         else:
-            text = st.text_input("Summary text")
+            text = st.text_area("Summary text")
 
         if st.button('Generate'):
             # if text == '':
