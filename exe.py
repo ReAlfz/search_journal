@@ -51,7 +51,6 @@ if __name__ == '__main__':
     # Creating a side panel for inputs
     with st.sidebar:
         st.write("## Code Generator Settings")
-        programming_language = st.selectbox("Choose the language:", ["Indonesian", "English"])
         uploaded_file = st.file_uploader("Choose a PDF file", type=["pdf"])
 
         if uploaded_file is not None:
@@ -62,13 +61,7 @@ if __name__ == '__main__':
             text = st.text_area("Summary text")
 
         if st.button('Generate'):
-            # if text == '':
-            #     text = extract_abstract(file_path, programming_language)
-
-            if programming_language == 'Indonesian':
-                formatted_prompt = f"Tulis rangkuman text ini: {text}"
-            else:
-                formatted_prompt = f"Write Summary this text: {text}"
+            formatted_prompt = f"Write Summary this text: {text}"
 
             response = ai.generate_text(
                 **defaults,
